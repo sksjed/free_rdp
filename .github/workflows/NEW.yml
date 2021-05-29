@@ -27,7 +27,7 @@ jobs:
     - name: Creating Tunnel.
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
     - name: Connecting to your RDP.
-      run: cmd /c start.bat
+      run: cmd /c start.bat WIN_USERNAME WIN_PASSWORD
       env:
         WIN_USERNAME: ${{ secrets.WIN_USERNAME }}
         WIN_PASSWORD: ${{ secrets.WIN_PASSWORD }}
